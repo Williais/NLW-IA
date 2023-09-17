@@ -1,7 +1,8 @@
 import { pipeline } from "@xenova/transformers"
+
 import {transcriptionExample} from "./utils/transcription.js"
 
-export async function transcribe (){
+export async function transcribe(audio){
     
     try {
         //return transcriptionExample
@@ -18,7 +19,7 @@ export async function transcribe (){
             stride_length_s: 5,
             language: "portuguese",
             task: "transcribe",
-        })
+          })
 
         console.log("Transcrição finalizada com sucesso.")
         return transcription?.text.replace("[Música]", "")
